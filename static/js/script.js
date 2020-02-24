@@ -16,7 +16,7 @@ $(document).ready(function () {
 	user_id = "abhinendra";
 
 	//if you want the bot to start the conversation
-	// action_trigger();
+	// action_trigger();;;
 
 })
 
