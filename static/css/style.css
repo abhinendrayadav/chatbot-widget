@@ -1,6 +1,6 @@
 /* ============= css related to chats =============== */
 
-.widget {
+.chatbot .widget {
 	display: none;
 	width: 350px;
 	right: 15px;
@@ -10,9 +10,10 @@
 	background: #f7f7f7;
 	border-radius: 10px 10px 10px 10px;
 	box-shadow: 0px 2px 10px 1px #b5b5b5;
+	z-index: 100;
 }
 
-.chat_header {
+.chatbot .chat_header {
 	height: 60px;
 	background: rgb(68, 61, 177);
 	border-radius: 10px 10px 0px 0px;
@@ -20,14 +21,14 @@
 	font-size: 20px;
 }
 
-.chat_header_title {
+.chatbot .chat_header_title {
 	color: white;
 	float: left;
 	margin-top: 3%;
 	margin-left: 35%;
 }
 
-.chats {
+.chatbot .chats {
 	/* display: none; */
 	height: 385px;
 	padding: 2px;
@@ -37,7 +38,7 @@
 	transition: 0.2s;
 }
 
-div.chats::-webkit-scrollbar {
+.chatbot div.chats::-webkit-scrollbar {
 	overflow-y: hidden;
 	width: 0px;
 	/* remove scrollbar space /
@@ -45,12 +46,12 @@ div.chats::-webkit-scrollbar {
     / optional: just make scrollbar invisible */
 }
 
-.clearfix {
+.chatbot .clearfix {
 	margin-top: 2px;
 	margin-bottom: 2px;
 }
 
-.botAvatar {
+.chatbot .botAvatar {
 	border-radius: 50%;
 	width: 1.5em;
 	height: 1.5em;
@@ -59,7 +60,7 @@ div.chats::-webkit-scrollbar {
 	/* border: 2px solid  #2c53af ; */
 }
 
-.botMsg {
+.chatbot .botMsg {
 	float: left;
 	margin-top: 5px;
 	background: white;
@@ -75,23 +76,18 @@ div.chats::-webkit-scrollbar {
 	border-radius: 0 20px 20px 20px;
 }
 
-textarea {
+.chatbot textarea {
 	box-shadow: none;
 	resize: none;
 	outline: none;
 	overflow: hidden;
-	font-family: Raleway;
 }
 
-textarea::-webkit-input-placeholder {
-	font-family: Raleway;
-}
-
-textarea-webkit-scrollbar {
+.chatbot textarea-webkit-scrollbar {
 	width: 0 !important
 }
 
-.userMsg {
+.chatbot .userMsg {
 	animation: animateElement linear 0.2s;
 	animation-iteration-count: 1;
 	margin-top: 5px;
@@ -109,7 +105,7 @@ textarea-webkit-scrollbar {
 	box-shadow: 0px 2px 5px 0px #9a828454;
 }
 
-.userAvatar {
+.chatbot .userAvatar {
 	animation: animateElement linear 0.3s;
 	animation-iteration-count: 1;
 	border-radius: 50%;
@@ -120,7 +116,7 @@ textarea-webkit-scrollbar {
 	/* border: 2px solid  #2c53af ; */
 }
 
-.usrInput {
+.chatbot .usrInput {
 	padding: 0.5em;
 	width: 80%;
 	margin-left: 4%;
@@ -129,7 +125,7 @@ textarea-webkit-scrollbar {
 	height: 40px;
 }
 
-.keypad {
+.chatbot .keypad {
 	/* display: none;  */
 	background: white;
 	height: 50px;
@@ -140,7 +136,7 @@ textarea-webkit-scrollbar {
 	border-radius: 0px 0px 10px 10px;
 }
 
-#sendButton {
+.chatbot #sendButton {
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
@@ -154,7 +150,7 @@ textarea-webkit-scrollbar {
 	color: #2b2bab;
 }
 
-.imgProfile {
+.chatbot .imgProfile {
 	box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 rgba(0, 0, 0, 0.12);
 	background: white;
 	border-radius: 50px;
@@ -162,7 +158,7 @@ textarea-webkit-scrollbar {
 	padding: 2%;
 }
 
-.profile_div {
+.chatbot .profile_div {
 	/* display: none; */
 	position: fixed;
 	padding: 5px;
@@ -170,18 +166,19 @@ textarea-webkit-scrollbar {
 	bottom: 0;
 	right: 0;
 	cursor: pointer;
+	z-index: 100;
 }
 
 
 /* css for dropdown menu of the bot */
 
-#close,
-#restart,
-#clear {
+.chatbot#close,
+.chatbot#restart,
+.chatbot#clear {
 	cursor: pointer;
 }
 
-.dropdown-trigger {
+.chatbot .dropdown-trigger {
 	cursor: pointer;
 	color: white;
 	margin-right: 5px;
@@ -189,8 +186,8 @@ textarea-webkit-scrollbar {
 	margin-top: 3%;
 }
 
-.dropdown-content li>a,
-.dropdown-content li>span {
+.chatbot .dropdown-content li>a,
+.chatbot .dropdown-content li>span {
 	color: #443db1;
 }
 
@@ -211,7 +208,7 @@ textarea-webkit-scrollbar {
 
 /* css for image card */
 
-.imgcard {
+.chatbot .imgcard {
 	object-fit: cover;
 	width: 80%;
 	height: 90%;
@@ -221,7 +218,7 @@ textarea-webkit-scrollbar {
 
 /* css for botTyping */
 
-.botTyping {
+.chatbot .botTyping {
 	float: left;
 	margin-top: 5px;
 	background: white;
@@ -236,7 +233,7 @@ textarea-webkit-scrollbar {
 	border-radius: 0 20px 20px 20px;
 }
 
-.botTyping>div {
+.chatbot .botTyping>div {
 	width: 10px;
 	height: 10px;
 	background-color: #2c53af;
@@ -247,12 +244,12 @@ textarea-webkit-scrollbar {
 	margin-right: 5px;
 }
 
-.botTyping .bounce1 {
+.chatbot .botTyping .bounce1 {
 	-webkit-animation-delay: -0.32s;
 	animation-delay: -0.32s;
 }
 
-.botTyping .bounce2 {
+.chatbot .botTyping .bounce2 {
 	-webkit-animation-delay: -0.16s;
 	animation-delay: -0.16s;
 }
@@ -281,10 +278,10 @@ textarea-webkit-scrollbar {
 	}
 }
 
-input:focus {
+.chatbot input:focus {
 	outline: none;
 }
 
-video:focus {
+.chatbot video:focus {
 	outline: none;
 }
