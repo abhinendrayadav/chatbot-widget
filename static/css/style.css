@@ -127,9 +127,9 @@
 
 .chatbot .keypad {
 	/* display: none;  */
-	background: black;
+	background: white;
 	height: 50px;
-	position: absolute;
+	position: static;
 	bottom: 0px;
 	width: 100%;
 	padding: 5px;
@@ -140,7 +140,7 @@
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
-	display: inline-block;
+	position: static;
 	float: right;
 	margin-right: 30px;
 	text-align: center;
@@ -178,7 +178,7 @@
 	cursor: pointer;
 }
 
-.chatbot .dropdown-trigger {
+.chatbot .close {
 	cursor: pointer;
 	color: white;
 	margin-right: 5px;

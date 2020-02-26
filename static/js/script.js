@@ -2,20 +2,17 @@
 $(document).ready(function () {
 
 	//drop down menu for close, restart conversation & clear the chats.
-	$("#dropdown-trigger").click(function () {
-		$(".profile_div").toggle();
-		$(".widget").toggle();
-	});
-
-	//initiate the modal for displaying the charts, if you dont have charts, then you comment the below line
-	// $('.modal').modal();
+	// $("#close").click(function () {
+	// 	$(".profile_div").toggle();
+	// 	$(".widget").toggle();
+	// });
 
 	//enable this if u have configured the bot to start the conversation. 
 	// showBotTyping();
 	// $("#userInput").prop('disabled', true);
 
 	//global variables
-	action_name = "action_greet_user";
+	// action_name = "action_greet_user";
 	user_id = "abhinendra";
 
 	//if you want the bot to start the conversation
@@ -26,13 +23,7 @@ $(document).ready(function () {
 // ========================== restart conversation ========================
 function restartConversation() {
 	$("#userInput").prop('disabled', true);
-	//destroy the existing chart
-	// $('.collapsible').remove();
 
-	// if (typeof chatChart !== 'undefined') { chatChart.destroy(); }
-
-	// $(".chart-container").remove();
-	// if (typeof modalChart !== 'undefined') { modalChart.destroy(); }
 	$(".chats").html("");
 	$(".usrInput").val("");
 	send("/restart");
@@ -76,15 +67,6 @@ $(".usrInput").on("keyup keypress", function (e) {
 			e.preventDefault();
 			return false;
 		} else {
-			//destroy the existing chart, if yu are not using charts, then comment the below lines
-			// $('.collapsible').remove();
-			// if (typeof chatChart !== 'undefined') { chatChart.destroy(); }
-
-			// $(".chart-container").remove();
-			// if (typeof modalChart !== 'undefined') { modalChart.destroy(); }
-
-
-
 			$("#paginated_cards").remove();
 			$(".suggestions").remove();
 			$(".quickReplies").remove();
@@ -104,16 +86,6 @@ $("#sendButton").on("click", function (e) {
 		return false;
 	}
 	else {
-		//destroy the existing chart
-
-		// chatChart.destroy();
-		// $(".chart-container").remove();
-		// if (typeof modalChart !== 'undefined') { modalChart.destroy(); }
-
-		// $(".suggestions").remove();
-		// $("#paginated_cards").remove();
-		// $(".quickReplies").remove();
-		// $(".usrInput").blur();
 		setUserResponse(text);
 		send(text);
 		e.preventDefault();
@@ -241,27 +213,6 @@ function setBotResponse(response) {
 						return;
 					}
 
-					//check if the custom payload type is "chart"
-					if (response[i].custom.payload == "chart") {
-
-						// sample format of the charts data:
-						// var chartData = { "title": "Leaves", "labels": ["Sick Leave", "Casual Leave", "Earned Leave", "Flexi Leave"], "backgroundColor": ["#36a2eb", "#ffcd56", "#ff6384", "#009688", "#c45850"], "chartsData": [5, 10, 22, 3], "chartType": "pie", "displayLegend": "true" }
-
-						//store the below parameters as global variable, 
-						// so that it can be used while displaying the charts in modal.
-						chartData = (response[i].custom.data)
-						title = chartData.title;
-						labels = chartData.labels;
-						backgroundColor = chartData.backgroundColor;
-						chartsData = chartData.chartsData;
-						chartType = chartData.chartType;
-						displayLegend = chartData.displayLegend;
-
-						// pass the above variable to createChart function
-						createChart(title, labels, backgroundColor, chartsData, chartType, displayLegend)
-						return;
-					}
-
 					//check of the custom payload type is "collapsible"
 					if (response[i].custom.payload == "collapsible") {
 						data = (response[i].custom.data);
@@ -281,10 +232,10 @@ $("#profile_div").click(function () {
 	$(".widget").toggle();
 });
 
-$("#dropdown-trigger").click(function () {
+$("#close").on("click", function (e){
 	$(".profile_div").toggle();
 	$(".widget").toggle();
-});
+})
 
 //======================================bot typing animation ======================================
 function showBotTyping() {
@@ -300,28 +251,6 @@ function hideBotTyping() {
 	$('.botTyping').remove();
 }
 
-//====================================== Collapsible =========================================
-
-// function to create collapsible,
-// for more info refer:https://materializecss.com/collapsible.html
-// function createCollapsible(data) {
-// 	//sample data format:
-// 	//var data=[{"title":"abc","description":"xyz"},{"title":"pqr","description":"jkl"}]
-// 	list = "";
-// 	for (i = 0; i < data.length; i++) {
-// 		item = '<li>' +
-// 			'<div class="collapsible-header">' + data[i].title + '</div>' +
-// 			'<div class="collapsible-body"><span>' + data[i].description + '</span></div>' +
-// 			'</li>'
-// 		list += item;
-// 	}
-// 	var contents = '<ul class="collapsible">' + list + '</uL>';
-// 	$(contents).appendTo(".chats");
-
-// 	// initialize the collapsible
-// 	$('.collapsible').collapsible();
-// 	scrollToBottomOfResults();
-// }
 
 
 
