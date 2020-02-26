@@ -5,11 +5,6 @@
 
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
-
-      <!--Import Font Awesome Icon Font-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-         integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />  
 
       <!--Import materialize.css-->
       <link rel="stylesheet" type="text/css" href="static/css/materialize.min.css">
@@ -28,18 +23,9 @@
 
                <!--Add the name of the bot here -->
                <span class="chat_header_title">ProVA</span>
-               <span class="dropdown-trigger" href='#' data-target='dropdown1'>
-                  <i class="material-icons">
-                  more_vert
-                  </i>
+               <span class="dropdown-trigger">
+                  <i class="material-icons">close</i>
                </span>
-
-               <!-- Dropdown menu-->
-               <ul id='dropdown1' class='dropdown-content'>
-                  <li><a href="#" id="clear">Clear</a></li>
-                  <li><a href="#" id="restart">Restart</a></li>
-                  <li><a href="#" id="close" >Close</a></li>
-               </ul>
             </div>
 
             <!--Chatbot contents goes here -->
@@ -50,7 +36,7 @@
             <!--keypad for user to type the message -->
             <div class="keypad">
                <textarea id="userInput" placeholder="Type a message..." class="usrInput"></textarea>
-               <div id="sendButton"><i class="fa fa-paper-plane" aria-hidden="true"></i></div>
+               <div id="sendButton"><i class="material-icons">send</i></div>
             </div>
          </div>
 
@@ -69,7 +55,7 @@
       <script type="text/javascript" src="static/js/script.js"></script>
 
       <!--Chart.js Script -->
-      <script type="text/javascript" src="static/js/chart.min.js"></script>
+      <!-- <script type="text/javascript" src="static/js/chart.min.js"></script> -->
 
    </body>
 </html>

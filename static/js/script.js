@@ -2,7 +2,10 @@
 $(document).ready(function () {
 
 	//drop down menu for close, restart conversation & clear the chats.
-	$('.dropdown-trigger').dropdown();
+	$("#dropdown-trigger").click(function () {
+		$(".profile_div").toggle();
+		$(".widget").toggle();
+	});
 
 	//initiate the modal for displaying the charts, if you dont have charts, then you comment the below line
 	// $('.modal').modal();
@@ -278,28 +281,10 @@ $("#profile_div").click(function () {
 	$(".widget").toggle();
 });
 
-//====================================== functions for drop-down menu of the bot  =========================================
-
-//restart function to restart the conversation.
-$("#restart").click(function () {
-	restartConversation()
-});
-
-//clear function to clear the chat contents of the widget.
-$("#clear").click(function () {
-	$(".chats").fadeOut("normal", function () {
-		$(".chats").html("");
-		$(".chats").fadeIn();
-	});
-});
-
-//close function to close the widget.
-$("#close").click(function () {
+$("#dropdown-trigger").click(function () {
 	$(".profile_div").toggle();
 	$(".widget").toggle();
-	scrollToBottomOfResults();
 });
-
 
 //======================================bot typing animation ======================================
 function showBotTyping() {
@@ -319,24 +304,24 @@ function hideBotTyping() {
 
 // function to create collapsible,
 // for more info refer:https://materializecss.com/collapsible.html
-function createCollapsible(data) {
-	//sample data format:
-	//var data=[{"title":"abc","description":"xyz"},{"title":"pqr","description":"jkl"}]
-	list = "";
-	for (i = 0; i < data.length; i++) {
-		item = '<li>' +
-			'<div class="collapsible-header">' + data[i].title + '</div>' +
-			'<div class="collapsible-body"><span>' + data[i].description + '</span></div>' +
-			'</li>'
-		list += item;
-	}
-	var contents = '<ul class="collapsible">' + list + '</uL>';
-	$(contents).appendTo(".chats");
+// function createCollapsible(data) {
+// 	//sample data format:
+// 	//var data=[{"title":"abc","description":"xyz"},{"title":"pqr","description":"jkl"}]
+// 	list = "";
+// 	for (i = 0; i < data.length; i++) {
+// 		item = '<li>' +
+// 			'<div class="collapsible-header">' + data[i].title + '</div>' +
+// 			'<div class="collapsible-body"><span>' + data[i].description + '</span></div>' +
+// 			'</li>'
+// 		list += item;
+// 	}
+// 	var contents = '<ul class="collapsible">' + list + '</uL>';
+// 	$(contents).appendTo(".chats");
 
-	// initialize the collapsible
-	$('.collapsible').collapsible();
-	scrollToBottomOfResults();
-}
+// 	// initialize the collapsible
+// 	$('.collapsible').collapsible();
+// 	scrollToBottomOfResults();
+// }
 
 
 

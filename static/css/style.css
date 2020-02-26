@@ -127,7 +127,7 @@
 
 .chatbot .keypad {
 	/* display: none;  */
-	background: white;
+	background: black;
 	height: 50px;
 	position: absolute;
 	bottom: 0px;
