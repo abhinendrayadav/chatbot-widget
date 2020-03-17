@@ -1,0 +1,23 @@
+<html>
+    <body>
+            <div id="webchat">
+                    <script src='https://d33wubrfki0l68.cloudfront.net/js/4e0ba407b1fba6aa8f5d08d0fe19029d7d415e1a/_static/rasa-webchat.js'></script>
+                    <script>
+                      WebChat.default.init({
+                        selector: "#webchat",
+                        initPayload: "/greet",
+                        socketUrl: "http://10.11.12.148:5005/",
+                        socketPath: "/socket.io",
+                        title: "ProVA",
+                        inputTextFieldHint: "I'm ProVA!",
+                        profileAvatar: "https://raw.githubusercontent.com/abhinendrayadav/chatbot-widget/master/static/img/prova.png",
+                        openLauncherImage: "https://raw.githubusercontent.com/abhinendrayadav/chatbot-widget/master/static/img/prova.png",              
+                        connecton: "open",
+                        storage: "local",
+                        showCloseButton: true,
+                        hideWhenNotConnected: false,
+                      });
+                    </script>
+                  </div>
+    </body>
+</html>

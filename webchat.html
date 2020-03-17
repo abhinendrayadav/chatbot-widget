@@ -1,15 +1,15 @@
 <html>
   <body>
         <div id="webchat">
-          <script src='https://raw.githubusercontent.com/abhinendrayadav/chatbot-widget/upscript/webchat_script.js'></script>
+          <script src='https://storage.googleapis.com/mrbot-cdn/webchat-latest.js'></script>
           <script>
             WebChat.default.init({
               selector: "#webchat",
               initPayload: "/greet",
-              socketUrl: "http://10.11.40.74:5005/",
+              socketUrl: "http://10.11.12.148:5005/",
               socketPath: "/socket.io",
               title: "ProVA",
-              subtitle: null,
+              subtitle: "Under Development",
               profileAvatar: "https://raw.githubusercontent.com/abhinendrayadav/chatbot-widget/master/static/img/prova.png",
               showCloseButton: true,
               fullScreenMode: false,
@@ -19,7 +19,6 @@
               linksOpenTab: false,
               openLauncherImage: "https://raw.githubusercontent.com/abhinendrayadav/chatbot-widget/master/static/img/prova.png",
               showFullScreenButton: false,
-              closeImage : "static/img/userAvatar.jpg",
               customMessageDelay: (message) => {
                 return 900 + message.length;
               },
@@ -27,7 +26,6 @@
                 storage: "local"
               }
             });
-
           </script>
         </div>
   </body>
